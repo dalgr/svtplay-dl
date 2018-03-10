@@ -1,6 +1,6 @@
 # ex:ts=4:sw=4:sts=4:et
 # -*- tab-width: 4; c-basic-offset: 4; indent-tabs-mode: nil -*-
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
 import sys
 import time
 import re
@@ -164,7 +164,7 @@ def output(options, extension="mp4", openfd=True, mode="wb", **kwargs):
                 log.error("File (%s) already exists. Use --force to overwrite" % options.output)
                 return None
     if openfd:
-        file_d = open(options.output, mode, **kwargs)
+        file_d = open(options.output, str(mode), **kwargs)
         return file_d
     return True
 
